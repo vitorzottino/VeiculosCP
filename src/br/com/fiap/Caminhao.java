@@ -52,12 +52,15 @@ public class Caminhao extends Veiculos {
 
 	@Override
 	public void showSpecs() {
+		System.out.println("\n----------------------");
 		System.out.print("MARCA: " + this.getBrand());
 		System.out.print("\nMODELO: " + this.getModel());
+		System.out.print("\nPeso: " + this.weight + " KG");
+		System.out.print("\nCapacidade da carreta: " + this.maxLoad);
 		System.out.print("\nTransmissao: " + this.getTransmission());
-		System.out.print("\nVelocidade Maxima: " + this.getTopSpeed());
+		System.out.print("\nVelocidade Maxima: " + this.getTopSpeed() + " KM/h");
 		System.out.print("\nPotencia do motor: " + this.getHp());
-		System.out.print("\nCapacidade do tanque: " + this.getGasTank() + " litros.");
+		System.out.print("\nCapacidade do tanque: " + this.getGasTank() + " litros");
 		System.out.print("\nKM/L: " + this.getConsumo());
 		System.out.println(containTrunk());
 

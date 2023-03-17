@@ -3,7 +3,6 @@ package br.com.fiap;
 public abstract class Veiculos {
 
 	protected int wheels, hp, doorsNum, topSpeed, gasTank, fuel, kmh, brk, acel;
-	
 
 	protected double weight, consumo;
 	protected String brand, model, transmission;
@@ -29,7 +28,7 @@ public abstract class Veiculos {
 	public boolean verify() {
 
 		if (this.fuel >= 1) {
-			System.out.println("\n" + this.model + " OK para ligar");
+			System.out.println(this.model + " OK para ligar");
 			return true;
 		}
 
@@ -40,7 +39,7 @@ public abstract class Veiculos {
 
 	public void turnOn() {
 		if (this.verify()) {
-			System.out.println("\n" + this.model + " ligado");
+			System.out.println(this.model + " ligado");
 			this.isOn = true;
 
 		} else {
@@ -72,10 +71,13 @@ public abstract class Veiculos {
 
 		if (this.isOn) {
 			if (this.fuel >= acel / this.consumo) {
+
 				this.kmh += acel;
 				this.fuel -= (acel / this.consumo);
 				System.out.println("\nAcelerou: " + acel + " Velocidade atual: " + this.kmh + "km/h");
-				System.out.println("Gasolina: " + this.fuel);
+				System.out.println("Gasolina restante: " + this.fuel + "%");
+				System.out.print("Gasolina gasta: ");
+				System.out.printf("%.2f", (acel / consumo));
 				this.acel = acel;
 				return this.kmh;
 			} else
@@ -194,7 +196,7 @@ public abstract class Veiculos {
 	public void setConsumo(int consumo) {
 		this.consumo = consumo;
 	}
-	
+
 	public int getAcel() {
 		return acel;
 	}
@@ -202,6 +204,5 @@ public abstract class Veiculos {
 	public void setAcel(int acel) {
 		this.acel = acel;
 	}
-	
 
 }
